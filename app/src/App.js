@@ -7,7 +7,7 @@ import ApiRandomizer from './shared/ApiRandomizer';
 function App() {
   let thing = new ApiRandomizer();
 
-  console.log(thing);
+  thing.pullRandomApi();
 
   return (
     <div className="App">
