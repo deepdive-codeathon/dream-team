@@ -9,6 +9,8 @@ function App() {
 
   thing.pullRandomApi();
 
+  console.log(thing.getApi());
+
   return (
     <div className="App">
       <ThisOrThat />
