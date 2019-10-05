@@ -1,3 +1,5 @@
+import React from 'react';
+
 const apis = require('../apis.json');
 const keys = require('../api_keys.json');
 const axios = require('axios');
@@ -6,8 +8,16 @@ const axios = require('axios');
  * This class gets the list of our APIs and pulls a random name; it then pulls the correspnding key
  * and gives access to both.
  */
-export default class ApiRandomizer {
-    constructor() {
+export default class ApiRandomizer extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            candidate: '',
+            isMounted: false
+        }
+
         this.apiKeys = keys;
         this.apiUrls = apis;
         this.apiNames = new Array();
@@ -16,12 +26,13 @@ export default class ApiRandomizer {
         this.api = null;
         this.key = null;
 
-        // Set poll candidate
-        this.candidate = null;
-
         // Run main functions of class
         this.pullRandomApi();
-        this.getData('https://api.chucknorris.io/jokes/random', this.key);
+        this.getData(this.api, this.key);
+    }
+
+    componentDidMount() {
+        this.setState({ isMounted: true });
     }
 
     // Pull a random api
@@ -33,7 +44,9 @@ export default class ApiRandomizer {
 
         // Pick random API name
         let api = this.apiNames[Math.floor(Math.random() * Math.floor(this.apiNames.length))];
-
+        this.state = {
+            candidate: ''
+        }
         // Pull api key based on name generated
         switch (api) {
             case 'chuck_norris_jokes':
@@ -151,32 +164,37 @@ export default class ApiRandomizer {
             case 'https://api.chucknorris.io/jokes/random':
                 request.headers = API_HEADERS.chuck_norris_jokes;
                 axios.get(api, request).then((response) => {
-                    this.candidate = response ? response.data.value : "";
-                    console.log("Chuck Norris:" + this.candidate);
+                    const chuckQuote = response.data.value;
+                    this.setState({ candidate: chuckQuote });
                 });
                 break;
             case 'http://numbersapi.com/random':
                 request.headers = API_HEADERS.numbers;
                 axios.get(api, request).then((response) => {
-                    this.candidate = response.data;
+                    const numFact = response.data;
+                    this.setState({ candidate: numFact });
                 });
                 break;
             case 'https://api.thecatapi.com/v1/images/search':
                 request.headers = API_HEADERS.cats;
                 axios.get(api, request).then((response) => {
-                    this.candidate = response.data[0].url;
+                    const catPic = response.data[0].url;
+                    this.setState({ candidate: catPic })
                 });
                 break;
             case 'https://dog.ceo/api/breeds/image/random':
                 axios.get(api, request).then((response) => {
-                    this.candidate = response.data.message;
+                    const dogPic = response.data.message;
+                    this.setState({ candidate: dogPic })
                 });
                 break;
             case 'https://images-api.nasa.gov':
-                axios.get(api + API_HEADERS.nasa.key).then(function (response) {
+                axios.get(api + API_HEADERS.nasa.key).then((response) => {
                     // Choose random object from get response
                     let nasaObj = response.data.collection.items[Math.floor(Math.random() * Math.floor(response.data.collection.items.length))]
-                    this.candidate = nasaObj.links[0].href;
+                    const nasaPic = nasaObj.links[0].href;
+
+                    this.setState({ candidate: nasaPic });
                 });
                 break;
             default:
@@ -185,10 +203,21 @@ export default class ApiRandomizer {
     }
 
     setCandidate = (candidate) => {
-        this.candidate = candidate;
+        this.setState({ candidate });
+
+        console.log("dfdsfdsfas" + this.state.candidate);
     }
 
     getCandidate() {
-        return this.candidate;
+        return this.state.candidate;
+    }
+
+    render() {
+        console.log(this.state.candidate);
+        return (
+            <>
+                <p>{this.getCandidate()}</p>
+            </>
+        );
     }
 }

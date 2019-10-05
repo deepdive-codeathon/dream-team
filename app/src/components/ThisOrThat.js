@@ -8,20 +8,15 @@ export default class ThisOrThat extends React.Component {
     }
 
     render() {
-        let candidateOne = new ApiRandomizer();
-        let candidateTwo = new ApiRandomizer();
-
-        console.log(candidateOne.getCandidate());
-
         return(
             <>
                 <Container>
                     <Row>
                         <Col>
-                            <p>Hello{candidateOne.getCandidate()}</p>
+                            <ApiRandomizer />
                         </Col>
                         <Col>
-                            <p>{candidateTwo.candidate}</p>
+                            <ApiRandomizer />
                         </Col>
                     </Row>
                 </Container>
