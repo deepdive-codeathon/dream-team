@@ -1,10 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import ThisOrThat from './components/ThisOrThat';
 import ApiRandomizer from './shared/ApiRandomizer';
+import Splash from "/components/splash.jsx"
+
 
 function App() {
+
+
+
   let thing = new ApiRandomizer();
 
   return (
