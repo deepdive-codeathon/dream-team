@@ -142,6 +142,7 @@ export default class ApiRandomizer {
         // Create a request
         let request = axios.create({
             url: api,
+            timeout: 1000,
             headers: {}
         });
 
@@ -150,7 +151,8 @@ export default class ApiRandomizer {
             case 'https://api.chucknorris.io/jokes/random':
                 request.headers = API_HEADERS.chuck_norris_jokes;
                 axios.get(api, request).then((response) => {
-                    this.setCandidate(response.data.value);
+                    this.candidate = response ? response.data.value : "";
+                    console.log("Chuck Norris:" + this.candidate);
                 });
                 break;
             case 'http://numbersapi.com/random':
