@@ -7,10 +7,6 @@ import ApiRandomizer from './shared/ApiRandomizer';
 function App() {
   let thing = new ApiRandomizer();
 
-  thing.pullRandomApi();
-
-  console.log(thing.getApi());
-
   return (
     <div className="App">
       <ThisOrThat />

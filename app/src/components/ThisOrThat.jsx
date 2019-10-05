@@ -1,4 +1,6 @@
 import React from "react";
+import {Container, Row, Col} from 'react-bootstrap';
+import ApiRandomizer from '../shared/ApiRandomizer';
 
 export default class ThisOrThat extends React.Component {
     constructor(props) {
@@ -6,8 +8,24 @@ export default class ThisOrThat extends React.Component {
     }
 
     render() {
+        let candidateOne = new ApiRandomizer();
+        let candidateTwo = new ApiRandomizer();
+
+        console.log(candidateOne.getCandidate());
+
         return(
-            <p>Hello I am This or That.</p>
+            <>
+                <Container>
+                    <Row>
+                        <Col>
+                            <p>Hello{candidateOne.getCandidate()}</p>
+                        </Col>
+                        <Col>
+                            <p>{candidateTwo.candidate}</p>
+                        </Col>
+                    </Row>
+                </Container>
+            </>
         );
     }
 }
