@@ -1,0 +1,19 @@
+{
+  "name": "this_or_that",
+  "version": "1.0.0",
+  "description": "This is a fun app for polling random things against other random things.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepdive-codeathon/dream-team.git"
+  },
+  "author": "CodeCanna, annalisejaramillo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deepdive-codeathon/dream-team/issues"
+  },
+  "homepage": "https://github.com/deepdive-codeathon/dream-team#readme"
+}
