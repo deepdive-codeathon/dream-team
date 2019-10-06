@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import uuid from 'uuid';
+import Results from '../components/Results';
 
 const apis = require('../apis.json');
 const keys = require('../api_keys.json');
@@ -212,21 +213,16 @@ export default class ApiRandomizer extends React.Component {
     }
 
     setWinner = () => {
+        console.log("WINNER");
         this.setState(state => ({
             winner: this.getCandidate(),
             winnerId: uuid()
         }));
 
-        let winnerObj = {
-            candidate: this.getCandidate(),
-            isWinner: true,
-            winner: this.getWinner(),
-            winnerId: this.getWinnerId()
-        }
-
-        let winnerPost = axios.create({
-            
-        });
+        setTimeout(() => {
+            alert("You chose: " + this.getWinner());
+            window.location.href = '/this_or_that';
+        }, 3000);
     }
 
     getWinner() {
@@ -241,7 +237,7 @@ export default class ApiRandomizer extends React.Component {
         if (this.getCandidate().endsWith('.png') || this.getCandidate().endsWith('.jpg') || this.getCandidate().endsWith('.jpeg') || this.getCandidate().endsWith('.gif')) {
             return (
                 <div>
-                    <img className="voters-booth" id="pic-box" href="/results" src={this.getCandidate()} alt="Some Random Image" onClick={this.setWinner} />
+                    <img className="voters-booth" id="pic-box" src={this.getCandidate()} alt="Some Random Image" onClick={this.setWinner} />
                 </div>
             );
 
