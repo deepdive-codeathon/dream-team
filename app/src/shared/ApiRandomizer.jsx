@@ -1,21 +1,24 @@
 import React from 'react';
+import { Row, Col } from 'react-bootstrap';
 
 const apis = require('../apis.json');
 const keys = require('../api_keys.json');
 const axios = require('axios');
+
+// TODO: Get a click event to fire when clicking on a candidate.
 
 /**
  * This class gets the list of our APIs and pulls a random name; it then pulls the correspnding key
  * and gives access to both.
  */
 export default class ApiRandomizer extends React.Component {
-
     constructor(props) {
         super(props);
 
         this.state = {
             candidate: '',
-            isMounted: false
+            winner: '',
+            isMounted: true
         }
 
         this.apiKeys = keys;
@@ -32,7 +35,7 @@ export default class ApiRandomizer extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({ isMounted: true });
+
     }
 
     // Pull a random api
@@ -192,21 +195,43 @@ export default class ApiRandomizer extends React.Component {
         return candidateString;
     }
 
+    getPoll() {
+        let poll = {
+            candidateOne: this.getCandidate(),
+            candidateTwo: this.getCandidate(),
+            winner: this.getWinner()
+        }
+
+        return poll;
+    }
+
+    setWinner = (event) => {
+        this.setState(state => ({
+            winner: this.getCandidate()
+        }));
+    }
+
+    getWinner() {
+
+    }
+
     render() {
-        console.log(this.state.candidate);
-        let textHTML = ``;
         if (this.getCandidate().endsWith('.png') || this.getCandidate().endsWith('.jpg') || this.getCandidate().endsWith('.jpeg') || this.getCandidate().endsWith('.gif')) {
             return (
                 <>
-                    <img id="pic-box" src={this.getCandidate()} alt="Some Random Image" />
+                    <img className="voters-booth" id="pic-box" src={this.getCandidate()} alt="Some Random Image" />
                 </>
             );
 
         } else {
             return (
-                <>
-                    <p id="text-box">{this.getCandidate()}</p>
-                </>
+                <Row>
+                    <Col></Col>
+                    <Col id="text-box">
+                        <p id="text-box-text">{this.getCandidate()}</p>
+                    </Col>
+                    <Col></Col>
+                </Row>
             );
         }
     }

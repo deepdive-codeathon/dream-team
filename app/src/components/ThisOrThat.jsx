@@ -10,19 +10,23 @@ export default class ThisOrThat extends React.Component {
         super(props);
     }
 
+    handlClick() {
+        console.log("WHYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY");
+    }
+
     render() {
         return (
             <>
 
                 <Row>
                     <Col>
-                        <div as Container>
+                        <div>
                             <ApiRandomizer />
                         </div>
                     </Col>
                     <Col></Col>
                     <Col>
-                        <div className="">
+                        <div>
                             <ApiRandomizer />
                         </div>
                     </Col>

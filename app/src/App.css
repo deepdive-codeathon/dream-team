@@ -46,6 +46,10 @@
   float: outside;
 }
 
+#text-box-text {
+  padding: 5%;
+}
+
 
 .btn {
   background-color: #434343;
