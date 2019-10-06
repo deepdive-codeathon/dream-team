@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Row, Col} from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import ApiRandomizer from '../shared/ApiRandomizer.jsx';
 
 /**
@@ -11,14 +11,16 @@ export default class ThisOrThat extends React.Component {
     }
 
     render() {
-        return(
+        return (
             <>
                 <Container fluid>
                     <Row>
-                        <Col>
+                        <Col className="col-lg-4">
                             <ApiRandomizer />
                         </Col>
-                        <Col>
+                    </Row>
+                    <Row>
+                        <Col className="col-lg-4">
                             <ApiRandomizer />
                         </Col>
                     </Row>

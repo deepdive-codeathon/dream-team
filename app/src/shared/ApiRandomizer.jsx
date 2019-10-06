@@ -213,7 +213,7 @@ export default class ApiRandomizer extends React.Component {
         if (this.getCandidate().endsWith('.png') || this.getCandidate().endsWith('.jpg') || this.getCandidate().endsWith('.jpeg') || this.getCandidate().endsWith('.gif')) {
             return (
                 <>
-                    <img src={this.getCandidate()} alt="Some Random Image" />
+                    <img id="pic-box" src={this.getCandidate()} alt="Some Random Image" />
                 </>
             );
 
