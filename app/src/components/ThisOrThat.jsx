@@ -9,20 +9,19 @@ import image from "../shared/img/question.png"
  */
 export const ThisOrThat = () => {
 
-   
         return (
            <>
                <img src={img} className="img-fluid" id="logo" alt="logo" />
             <Container className="this-or-that">
 
                 <Row>
-                    <Col lg={4} className="randomizer">
+                    <Col lg={4} md={12} className="randomizer">
                             <ApiRandomizer />
                     </Col>
-                    <Col lg={2}>
+                    <Col lg={2} id="mark">
                         <img src={image} className="img-fluid" id="question" alt="question"/>
                     </Col>
-                    <Col lg={4} className="randomizer">
+                    <Col lg={4} md={12} className="randomizer">
                             <ApiRandomizer />
                     </Col>
                 </Row>

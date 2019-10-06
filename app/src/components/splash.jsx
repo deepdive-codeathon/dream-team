@@ -14,7 +14,7 @@ export const Splash = () => {
 			</Container>
 			<Container>
 			<ButtonToolbar>
-				<Button className="btn">WaStE mY <br/><br/>tIMe</Button>
+				<Button className="btn"><a href="ThisOrThat.jsx"/>WaStE mY <br/><br/>tIMe</Button>
 			</ButtonToolbar>
 			</Container>
 		</>

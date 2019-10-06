@@ -34,7 +34,7 @@
   height: 40vh;
   width: 40vh;
   padding: 2vh;
-  margin: 3vh;
+  margin: 0;
   background-color: #f52691;
   color: white;
   float: outside;
@@ -42,11 +42,11 @@
 }
 
 #pic-box {
-  height: 37vh;
-  width: 37vh;
+  height: 40vh;
+  width: 40vh;
   padding: 2vh;
-  margin: 3vh;
-  background-color: #25befc;
+  margin: 0;
+  background-color: #f369f8;
   float: outside;
 }
 
@@ -65,9 +65,15 @@
 }
 
 .this-or-that {
-  margin: 5vh;
+  margin: 10vh;
 }
 
 .randomizer {
-  margin:2vh;
+  margin-top:4vh;
+  margin-bottom: 4vh;
+  margin-left: 0;
+}
+
+#mark{
+margin-top: 100px;
 }
