@@ -6,9 +6,6 @@ import Splash from "./components/splash.jsx";
 
 
 function App() {
-
-
-
   let thing = new ApiRandomizer();
 
   return (

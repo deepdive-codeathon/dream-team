@@ -4,7 +4,6 @@ export default class ShowText extends React.Component {
     constructor() {
         this.state = {
             isMounted: false,
-
         }
     }
 

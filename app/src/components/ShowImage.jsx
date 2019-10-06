@@ -1,5 +1,8 @@
 import React from 'react';
 
+/**
+ * This class shows an image based on the type of poll candidate.
+ */
 export default class ShowImage extends React.Component {
     constructor() {
         this.state = {
