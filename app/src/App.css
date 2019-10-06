@@ -26,9 +26,13 @@
   margin: 0;
 }
 
+#question {
+  height: 12vh;
+}
+
 #text-box {
-  height: 37vh;
-  width: 37vh;
+  height: 40vh;
+  width: 40vh;
   padding: 2vh;
   margin: 3vh;
   background-color: #f52691;
@@ -46,10 +50,6 @@
   float: outside;
 }
 
-#text-box-text {
-  padding: 5%;
-}
-
 
 .btn {
   background-color: #434343;
@@ -62,4 +62,12 @@
   font-size: 10vh;
   margin: 10vh;
   border-radius: 50%;
+}
+
+.this-or-that {
+  margin: 5vh;
+}
+
+.randomizer {
+  margin:2vh;
 }
