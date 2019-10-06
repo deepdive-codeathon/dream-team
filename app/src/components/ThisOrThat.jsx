@@ -1,6 +1,6 @@
 import React from "react";
 import {Container, Row, Col} from 'react-bootstrap';
-import ApiRandomizer from '../shared/ApiRandomizer';
+import ApiRandomizer from '../shared/ApiRandomizer.jsx';
 
 export default class ThisOrThat extends React.Component {
     constructor(props) {
@@ -10,7 +10,7 @@ export default class ThisOrThat extends React.Component {
     render() {
         return(
             <>
-                <Container>
+                <Container fluid>
                     <Row>
                         <Col>
                             <ApiRandomizer />

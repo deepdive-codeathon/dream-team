@@ -1,8 +1,8 @@
 import React from 'react';
 // import "App.css";
-import ThisOrThat from './components/ThisOrThat';
-import ApiRandomizer from './shared/ApiRandomizer';
-import Splash from "./components/splash.jsx"
+import ThisOrThat from './components/ThisOrThat.jsx';
+import ApiRandomizer from './shared/ApiRandomizer.jsx';
+import Splash from "./components/splash.jsx";
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      <Splash/>
+      <ThisOrThat />
     </div>
   );
 }
