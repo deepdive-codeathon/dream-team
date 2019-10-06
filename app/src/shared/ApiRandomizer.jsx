@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
+import uuid from 'uuid';
 
 const apis = require('../apis.json');
 const keys = require('../api_keys.json');
@@ -18,6 +19,7 @@ export default class ApiRandomizer extends React.Component {
         this.state = {
             candidate: '',
             winner: '',
+            winnerId: '',
             isMounted: true
         }
 
@@ -210,14 +212,18 @@ export default class ApiRandomizer extends React.Component {
     }
 
     setWinner = () => {
-        console.log(this.getWinner());
         this.setState(state => ({
-            winner: this.getCandidate()
+            winner: this.getCandidate(),
+            winnerId: uuid()
         }));
     }
 
     getWinner() {
         return this.state.winner;
+    }
+
+    getWinnerId() {
+        return this.state.winnerId;
     }
 
     render() {
