@@ -216,6 +216,17 @@ export default class ApiRandomizer extends React.Component {
             winner: this.getCandidate(),
             winnerId: uuid()
         }));
+
+        let winnerObj = {
+            candidate: this.getCandidate(),
+            isWinner: true,
+            winner: this.getWinner(),
+            winnerId: this.getWinnerId()
+        }
+
+        let winnerPost = axios.create({
+            
+        });
     }
 
     getWinner() {
@@ -230,7 +241,7 @@ export default class ApiRandomizer extends React.Component {
         if (this.getCandidate().endsWith('.png') || this.getCandidate().endsWith('.jpg') || this.getCandidate().endsWith('.jpeg') || this.getCandidate().endsWith('.gif')) {
             return (
                 <div>
-                    <img className="voters-booth" id="pic-box" src={this.getCandidate()} alt="Some Random Image" onClick={this.setWinner} />
+                    <img className="voters-booth" id="pic-box" href="/results" src={this.getCandidate()} alt="Some Random Image" onClick={this.setWinner} />
                 </div>
             );
 

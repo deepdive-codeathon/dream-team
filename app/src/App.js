@@ -7,6 +7,7 @@ import './App.css';
 import {Container} from 'react-bootstrap';
 
 function App() {
+<<<<<<< HEAD
 	return (
 		<>
 			<BrowserRouter>
@@ -17,6 +18,15 @@ function App() {
 			</BrowserRouter>
 		</>
 );
+=======
+  return (
+    <>
+      <Container>
+        <Splash />
+      </Container>
+    </>
+  );
+>>>>>>> Added results page to show poll results.
 }
 
 export default App;
