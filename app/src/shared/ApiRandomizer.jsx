@@ -202,22 +202,27 @@ export default class ApiRandomizer extends React.Component {
         }
     }
 
-    setCandidate = (candidate) => {
-        this.setState({ candidate });
-
-        console.log("dfdsfdsfas" + this.state.candidate);
-    }
-
-    getCandidate() {
-        return this.state.candidate;
+    getCandidate(): String {
+        let candidateString = this.state.candidate;
+        return candidateString;
     }
 
     render() {
         console.log(this.state.candidate);
-        return (
-            <>
-                <p>{this.getCandidate()}</p>
-            </>
-        );
+        let textHTML = ``;
+        if (this.getCandidate().endsWith('.png') || this.getCandidate().endsWith('.jpg') || this.getCandidate().endsWith('.jpeg') || this.getCandidate().endsWith('.gif')) {
+            return (
+                <>
+                    <img src={this.getCandidate()} alt="Some Random Image" />
+                </>
+            );
+
+        } else {
+            return (
+                <>
+                    <p id="text-box">{this.getCandidate()}</p>
+                </>
+            );
+        }
     }
 }
