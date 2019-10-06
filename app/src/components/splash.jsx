@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import img from "../shared/img/Logo.png";
 import "../App.css";
 import Container from "react-bootstrap/Container";
+import ButtonToolbar from "react-bootstrap/ButtonToolbar";
+import Button from "react-bootstrap/Button"
 
 
 export const Splash = () => {
@@ -11,7 +13,9 @@ export const Splash = () => {
 				<img src={img} className="img-fluid" id="logo" alt="logo" />
 			</Container>
 			<Container>
-				<h2></h2>
+			<ButtonToolbar>
+				<Button className="btn">WaStE mY <br/><br/>tIMe</Button>
+			</ButtonToolbar>
 			</Container>
 		</>
 	)
