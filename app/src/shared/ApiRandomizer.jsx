@@ -29,13 +29,17 @@ export default class ApiRandomizer extends React.Component {
         this.api = null;
         this.key = null;
 
+        // Bind this keyword in handClick()
+        this.setWinner = this.setWinner.bind(this);
+
         // Run main functions of class
         this.pullRandomApi();
         this.getData(this.api, this.key);
     }
 
     componentDidMount() {
-
+        // Pull api stuff and set candidate state.
+        this.pullRandomApi();
     }
 
     // Pull a random api
@@ -205,33 +209,30 @@ export default class ApiRandomizer extends React.Component {
         return poll;
     }
 
-    setWinner = (event) => {
+    setWinner = () => {
+        console.log(this.getWinner());
         this.setState(state => ({
             winner: this.getCandidate()
         }));
     }
 
     getWinner() {
-
+        return this.state.winner;
     }
 
     render() {
         if (this.getCandidate().endsWith('.png') || this.getCandidate().endsWith('.jpg') || this.getCandidate().endsWith('.jpeg') || this.getCandidate().endsWith('.gif')) {
             return (
-                <>
-                    <img className="voters-booth" id="pic-box" src={this.getCandidate()} alt="Some Random Image" />
-                </>
+                <div>
+                    <img className="voters-booth" id="pic-box" src={this.getCandidate()} alt="Some Random Image" onClick={this.setWinner} />
+                </div>
             );
 
         } else {
             return (
-                <Row>
-                    <Col></Col>
-                    <Col id="text-box">
-                        <p id="text-box-text">{this.getCandidate()}</p>
-                    </Col>
-                    <Col></Col>
-                </Row>
+                <div id="text-box" onClick={this.setWinner}>
+                    <p id="text-box-text">{this.getCandidate()}</p>
+                </div>
             );
         }
     }

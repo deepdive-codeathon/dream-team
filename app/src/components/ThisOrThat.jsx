@@ -10,7 +10,7 @@ export default class ThisOrThat extends React.Component {
         super(props);
     }
 
-    handlClick() {
+    handlClick = () => {
         console.log("WHYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY");
     }
 

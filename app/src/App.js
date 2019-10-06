@@ -5,10 +5,7 @@ import Splash from "./components/splash.jsx";
 import './App.css';
 import { Container } from 'react-bootstrap';
 
-
 function App() {
-  let thing = new ApiRandomizer();
-
   return (
     <>
       <Container>
