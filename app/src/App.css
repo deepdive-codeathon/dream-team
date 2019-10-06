@@ -26,6 +26,27 @@
   margin: 0;
 }
 
+#text-box {
+  height: 37vh;
+  width: 37vh;
+  padding: 2vh;
+  margin: 3vh;
+  background-color: #f52691;
+  color: white;
+  float: outside;
+  font-size:3vh;
+}
+
+#pic-box {
+  height: 37vh;
+  width: 37vh;
+  padding: 2vh;
+  margin: 3vh;
+  background-color: #25befc;
+  float: outside;
+}
+
+
 .btn {
   background-color: #434343;
   border: white;
