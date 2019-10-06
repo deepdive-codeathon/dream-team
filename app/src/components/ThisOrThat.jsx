@@ -13,18 +13,21 @@ export default class ThisOrThat extends React.Component {
     render() {
         return (
             <>
-                <Container fluid>
-                    <Row>
-                        <Col className="col-lg-4">
+
+                <Row>
+                    <Col>
+                        <div as Container>
                             <ApiRandomizer />
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col className="col-lg-4">
+                        </div>
+                    </Col>
+                    <Col></Col>
+                    <Col>
+                        <div className="">
                             <ApiRandomizer />
-                        </Col>
-                    </Row>
-                </Container>
+                        </div>
+                    </Col>
+                </Row>
+
             </>
         );
     }

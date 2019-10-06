@@ -71,33 +71,18 @@ export default class ApiRandomizer extends React.Component {
                 let catsKey = this.apiKeys.keys[api];
 
                 this.setApi(catsUrl, catsKey);
-
-                /*
-                console.log("API Key:", catsKey);
-                console.log("API URL:", catsUrl);
-                */
                 break;
             case 'dogs':
                 // Dog api doesn't require a key.
                 let dogsUrl = this.apiUrls.url[api];
 
                 this.setApi(dogsUrl);
-
-                /*
-                console.log("API Key:", dogsKey);
-                console.log("DOG URL:", dogsUrl);
-                */
                 break;
             case 'nasa':
                 let nasaUrl = this.apiUrls.url[api];
                 let nasaKey = this.apiKeys.keys[api];
 
                 this.setApi(nasaUrl, nasaKey);
-
-                /*
-                console.log("API Key:", nasaKey);
-                console.log("NASA URL:", nasaUrl);
-                */
                 break;
             default:
                 throw new Error("Something went wrong with the api randomizer.");
@@ -202,7 +187,7 @@ export default class ApiRandomizer extends React.Component {
         }
     }
 
-    getCandidate(): String {
+    getCandidate() {
         let candidateString = this.state.candidate;
         return candidateString;
     }
